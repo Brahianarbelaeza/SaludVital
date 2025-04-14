@@ -33,6 +33,16 @@ jobs:
 
     - name: Build Docker image
       run: docker build -t myapp:latest .
+      
+    - name: Login to Docker Hub
+      run: echo "${{ secrets.VITALAPP_TOKEN_DOCKERHUB }}" | docker login -u "${{ secrets.VITALAPP_NAME_DOCKERHUB }}" --password-stdin
+
+    - name: Tag Docker image
+      run: docker tag myapp:latest ${{ secrets.VITALAPP_NAME_DOCKERHUB }}/myapp:latest
+
+    - name: Push Docker image to Docker Hub
+      run: docker push ${{ secrets.VITALAPP_NAME_DOCKERHUB }}/myapp:latest
+
 
   dependency-submission:
 
