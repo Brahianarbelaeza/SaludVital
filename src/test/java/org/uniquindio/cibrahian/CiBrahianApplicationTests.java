@@ -2,11 +2,9 @@ package org.uniquindio.cibrahian;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.uniquindio.cibrahian.controllers.PacienteController;
 import org.uniquindio.cibrahian.dto.PacienteDTO;
-import org.uniquindio.cibrahian.model.Paciente;
 import org.uniquindio.cibrahian.services.PacienteService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -30,6 +28,6 @@ class VitalAppTest {
         assertEquals("Paciente creado con éxito", respuesta);
 
         // Verificar que el servicio fue llamado correctamente
-        Mockito.verify(clienteServiceMock).crearCliente(clienteDTO);
+        Mockito.verify(clienteServiceMock).crearPaciente(clienteDTO);
     }
 }

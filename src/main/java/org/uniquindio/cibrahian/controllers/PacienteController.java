@@ -20,7 +20,7 @@ public class PacienteController {
     @PostMapping("/pacientes")
     public String crearCliente(@RequestBody PacienteDTO clienteDTO) {
         System.out.println("pacienteDTO = " + clienteDTO.nombre());
-        clienteService.crearCliente(clienteDTO);
+        clienteService.crearPaciente(clienteDTO);
         return "Paciente creado con éxito";
     }
 }
