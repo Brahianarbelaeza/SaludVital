@@ -18,16 +18,12 @@ class VitalAppTest {
         PacienteService clienteServiceMock = Mockito.mock(PacienteService.class);
         PacienteController clienteController = new PacienteController(clienteServiceMock);
 
-        // Crear DTO de prueba
         PacienteDTO clienteDTO = new PacienteDTO("Juan", "Pérez");
 
-        // Act: llamar al método directamente
         String respuesta = clienteController.crearCliente(clienteDTO);
 
-        // Assert: verificar respuesta
         assertEquals("Paciente creado con éxito", respuesta);
 
-        // Verificar que el servicio fue llamado correctamente
         Mockito.verify(clienteServiceMock).crearPaciente(clienteDTO);
     }
 }
