@@ -13,10 +13,9 @@ import org.uniquindio.cibrahian.services.PacienteService;
 @RequestMapping("/api")
 public class PacienteController {
 
-    // Inyectar el servicio de cliente
     private final PacienteService clienteService;
 
-
+    //Metodo para añadir paciente
     @PostMapping("/pacientes")
     public String crearCliente(@RequestBody PacienteDTO clienteDTO) {
         System.out.println("pacienteDTO = " + clienteDTO.nombre());
